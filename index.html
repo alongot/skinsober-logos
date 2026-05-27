@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkinSober — 10 Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F1EE; --ink:#2C3B32; --brown:#7D5D24;
+  --sage:#D3DBCA; --sand:#ECE9DA; --moss:#4A5E52;
+  --clay:#C68B6D; --clay-glow:rgba(198,139,109,0.55);
+  --hair:rgba(44,59,50,0.16);
+  --serif:'Instrument Serif', Georgia, serif;
+  --serif-display:'Playfair Display', Georgia, serif;
+  --garamond:'Cormorant Garamond', Garamond, Georgia, serif;
+  --sans:'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif;
+  --sans-mono:'DM Mono', 'Courier New', monospace;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ font-size:62.5%; }
+body{
+  font-family:var(--sans); font-size:1.5rem; line-height:1.55;
+  background:var(--paper); color:var(--ink);
+  padding:clamp(2rem,4vw,4rem) clamp(1.5rem,3vw,3rem);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{ max-width:1320px; margin:0 auto; }
+header{ text-align:center; margin-bottom:clamp(3rem,6vw,5rem); }
+header .eyebrow{
+  display:inline-block; font-size:0.72rem; letter-spacing:0.18em;
+  text-transform:uppercase; opacity:0.55; margin-bottom:1.2rem;
+}
+header h1{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(2.4rem,4.5vw,3.6rem); line-height:1.06; letter-spacing:-0.018em;
+}
+header h1 em{ color:var(--clay); font-style:italic; }
+header p{
+  margin:1.4rem auto 0; max-width:60ch; opacity:0.74; font-size:1.6rem;
+}
+.grid{
+  display:grid; gap:clamp(1.4rem,2.4vw,2.2rem);
+  grid-template-columns:repeat(auto-fill, minmax(340px,1fr));
+}
+.card{
+  display:flex; flex-direction:column; background:#fff;
+  border:1px solid var(--hair); border-radius:3px; overflow:hidden;
+  transition: transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s;
+}
+.card:hover{ transform:translateY(-2px); box-shadow:0 22px 50px -38px rgba(20,20,18,0.4); }
+.stage{
+  background:var(--paper);
+  min-height:240px;
+  display:flex; align-items:center; justify-content:center;
+  padding:clamp(2rem,4vw,3rem);
+  position:relative; overflow:hidden;
+}
+.stage.dark{ background:var(--ink); color:var(--paper); }
+.stage.sage{ background:var(--sage); }
+.stage.sand{ background:var(--sand); }
+.meta{
+  padding:1.6rem 1.8rem 1.8rem; border-top:1px solid var(--hair);
+}
+.num{
+  font-family:var(--serif); font-style:italic; font-size:0.95rem;
+  opacity:0.5; margin-bottom:0.45rem;
+}
+.title{
+  font-family:var(--serif); font-weight:400;
+  font-size:1.45rem; letter-spacing:-0.012em; margin-bottom:0.55rem;
+}
+.desc{
+  font-size:1.35rem; line-height:1.55; opacity:0.74;
+}
+
+/* ============================================================
+   LOGO CONCEPTS — each one a self-contained CSS+SVG composition
+   ============================================================ */
+
+/* 01 — Editorial serif (current live logo) */
+.l1{
+  font-family:var(--serif); font-weight:400; font-size:clamp(3.8rem,6vw,5.2rem);
+  letter-spacing:-0.022em; line-height:1; color:var(--ink);
+}
+
+/* 02 — Wide-tracked uppercase sans */
+.l2{
+  font-family:var(--sans); font-weight:300; font-size:clamp(1.3rem,2.2vw,1.7rem);
+  letter-spacing:0.42em; text-transform:uppercase; color:var(--ink);
+  /* Compensate the trailing whitespace from letter-spacing */
+  text-indent:0.42em;
+}
+
+/* 03 — Period-as-mark, lowercase serif */
+.l3{
+  font-family:var(--serif); font-weight:400; font-size:clamp(3.6rem,5.8vw,5rem);
+  letter-spacing:-0.018em; line-height:1; color:var(--ink);
+}
+.l3 .dot{ color:var(--clay); }
+
+/* 04 — Stacked masthead, condensed display serif */
+.l4{
+  font-family:var(--serif-display); font-weight:500;
+  font-size:clamp(3rem,4.8vw,4.2rem); line-height:0.92;
+  letter-spacing:-0.012em; text-align:center; color:var(--ink);
+  text-transform:uppercase;
+}
+.l4 .sb{ display:block; font-style:italic; font-weight:400; opacity:0.92; }
+
+/* 05 — Italic clay serif (display-italic, all-letters in warm clay) */
+.l5{
+  font-family:var(--serif); font-style:italic; font-weight:400;
+  font-size:clamp(4rem,6.5vw,5.8rem); letter-spacing:-0.024em; line-height:1;
+  color:var(--clay);
+}
+
+/* 06 — Asterisk prefix + lowercase sans */
+.l6{
+  display:flex; align-items:baseline; gap:0.55rem;
+  font-family:var(--sans); font-weight:400;
+  font-size:clamp(1.7rem,2.6vw,2.1rem); letter-spacing:0.04em; color:var(--ink);
+}
+.l6 .ast{
+  color:var(--clay); font-family:var(--serif); font-style:italic;
+  font-size:1.6em; line-height:0; transform:translateY(0.08em);
+}
+
+/* 07 — Warm seam underline */
+.l7{
+  position:relative; display:inline-block;
+  font-family:var(--serif); font-weight:400; font-size:clamp(3.6rem,5.8vw,5rem);
+  letter-spacing:-0.018em; line-height:1; color:var(--ink); padding-bottom:0.7rem;
+}
+.l7::after{
+  content:""; position:absolute; left:6%; right:6%; bottom:0.05em; height:2px;
+  background:var(--clay); border-radius:1px;
+  box-shadow:0 0 14px var(--clay-glow), 0 0 30px rgba(198,139,109,0.32);
+}
+
+/* 08 — Pebble ring mark above tight uppercase */
+.l8{ display:flex; flex-direction:column; align-items:center; gap:1.2rem; }
+.l8 .ring{
+  width:54px; height:54px; border:1px solid var(--ink); border-radius:50%;
+  position:relative; background:transparent;
+}
+.l8 .ring::after{
+  content:""; position:absolute; left:14%; right:14%; top:50%; height:2px;
+  background:var(--clay); border-radius:1px;
+  box-shadow:0 0 10px var(--clay-glow);
+  transform:translateY(-50%);
+}
+.l8 .word{
+  font-family:var(--sans); font-weight:400;
+  font-size:clamp(1.05rem,1.7vw,1.35rem);
+  letter-spacing:0.32em; text-transform:uppercase; color:var(--ink);
+  text-indent:0.32em;
+}
+
+/* 09 — SS Monogram (overlapped initials in display serif) */
+.l9{ position:relative; }
+.l9 svg{ width:clamp(170px,28vw,220px); height:auto; display:block; }
+.l9 .label{
+  margin-top:1.4rem; text-align:center;
+  font-family:var(--sans-mono); font-weight:400;
+  font-size:0.95rem; letter-spacing:0.42em; text-transform:uppercase;
+  opacity:0.7; text-indent:0.42em;
+}
+
+/* 10 — Dot-connected lowercase, all-grotesk */
+.l10{
+  font-family:var(--sans); font-weight:400; font-size:clamp(2.6rem,4.2vw,3.6rem);
+  letter-spacing:-0.025em; color:var(--ink); display:flex; align-items:center;
+  gap:0.45em;
+}
+.l10 .dot{
+  width:0.18em; height:0.18em; border-radius:50%; background:var(--clay);
+  box-shadow:0 0 10px var(--clay-glow);
+  align-self:center; transform:translateY(-0.02em);
+}
+
+/* === FOOTER NOTE === */
+footer{
+  margin-top:clamp(3rem,5vw,5rem); padding-top:2.2rem;
+  border-top:1px solid var(--hair); text-align:center;
+  font-size:1.3rem; opacity:0.6; line-height:1.6;
+}
+footer em{ font-family:var(--serif); font-style:italic; color:var(--clay); }
+
+@media (prefers-color-scheme: dark){
+  /* Optional dark backdrop variants — comment in if you want to preview on dark */
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">SkinSober · brand identity</span>
+  <h1>Ten <em>radically</em> different logo directions.</h1>
+  <p>Each rendered live in CSS + SVG. Click around, hover, look at letterforms. Tell me the number you want wired into the live header.</p>
+</header>
+
+<div class="grid">
+
+  <!-- 01 -->
+  <div class="card">
+    <div class="stage"><div class="l1">SkinSober</div></div>
+    <div class="meta">
+      <div class="num">— 01 —</div>
+      <div class="title">Editorial Serif</div>
+      <div class="desc">The current live logo. Instrument Serif, mixed case, single olive-ink color. Eadem / Nécessaire territory — refined, premium, universally usable.</div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="card">
+    <div class="stage"><div class="l2">SKINSOBER</div></div>
+    <div class="meta">
+      <div class="num">— 02 —</div>
+      <div class="title">Tracked uppercase sans</div>
+      <div class="desc">Tight light grotesk in all-caps with wide letter-spacing. Reads as a refined fashion masthead — Aēsop, Margiela, Tower 28's quieter cousin. Maximum restraint.</div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="card">
+    <div class="stage"><div class="l3">skinsober<span class="dot">.</span></div></div>
+    <div class="meta">
+      <div class="num">— 03 —</div>
+      <div class="title">Period-as-mark</div>
+      <div class="desc">Lowercase serif wordmark with a warm clay period. The period IS the brand mark — quiet, confident, hyper-distinctive. Saie-style signature. Scales to a single dot for favicon.</div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="card">
+    <div class="stage sand"><div class="l4">SKIN<span class="sb">Sober</span></div></div>
+    <div class="meta">
+      <div class="num">— 04 —</div>
+      <div class="title">Stacked masthead</div>
+      <div class="desc">SKIN in uppercase display serif over Sober in italic. Two-line magazine cover masthead. The most distinctive option — feels like a brand with a point of view, not a startup.</div>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="card">
+    <div class="stage"><div class="l5">skinsober</div></div>
+    <div class="meta">
+      <div class="num">— 05 —</div>
+      <div class="title">Italic clay serif</div>
+      <div class="desc">All-italic, lowercase, in warm clay. The most overtly feminine and editorial option. Reads as small-batch / artisanal / personal. Risk: tighter audience appeal, can read as "candle shop."</div>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="card">
+    <div class="stage"><div class="l6"><span class="ast">*</span><span>skinsober</span></div></div>
+    <div class="meta">
+      <div class="num">— 06 —</div>
+      <div class="title">Asterisk prefix</div>
+      <div class="desc">A serif-italic asterisk + lowercase sans wordmark. The asterisk is the mark; the word is the signature. Public Goods / The Ordinary territory — quiet, ingredient-list voice.</div>
+    </div>
+  </div>
+
+  <!-- 07 -->
+  <div class="card">
+    <div class="stage"><div class="l7">SkinSober</div></div>
+    <div class="meta">
+      <div class="num">— 07 —</div>
+      <div class="title">Warm seam underline</div>
+      <div class="desc">The editorial serif wordmark with a thin warm clay hairline beneath — directly references the warm light seam on the actual device. Most product-coherent option.</div>
+    </div>
+  </div>
+
+  <!-- 08 -->
+  <div class="card">
+    <div class="stage sage">
+      <div class="l8">
+        <span class="ring" aria-hidden="true"></span>
+        <span class="word">SkinSober</span>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="num">— 08 —</div>
+      <div class="title">Pebble + seam mark</div>
+      <div class="desc">An abstract logomark — circle with warm seam (the device viewed end-on) — above a tightly-tracked uppercase wordmark. The mark can stand alone for favicon / app icon / packaging stamp.</div>
+    </div>
+  </div>
+
+  <!-- 09 — SS Monogram via inline SVG, with interlocked construction -->
+  <div class="card">
+    <div class="stage dark">
+      <div class="l9">
+        <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" aria-label="SS monogram">
+          <defs>
+            <style>
+              .mono-fill{ fill:#F5F1EE; }
+              .mono-stroke{ stroke:#F5F1EE; stroke-width:6; fill:none; }
+              .mono-clay{ fill:#C68B6D; }
+            </style>
+          </defs>
+          <!-- First S (background, larger) -->
+          <text x="50%" y="62%" text-anchor="middle"
+                font-family="'Playfair Display', Georgia, serif"
+                font-style="italic" font-weight="500" font-size="200"
+                class="mono-fill" opacity="0.92">S</text>
+          <!-- Second S (overlapped, smaller, in clay) -->
+          <text x="64%" y="80%" text-anchor="middle"
+                font-family="'Instrument Serif', Georgia, serif"
+                font-style="italic" font-weight="400" font-size="130"
+                class="mono-clay">S</text>
+          <!-- Warm seam underline -->
+          <rect x="64" y="190" width="112" height="2" rx="1" class="mono-clay"/>
+        </svg>
+        <div class="label">SkinSober</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="num">— 09 —</div>
+      <div class="title">SS interlocked monogram</div>
+      <div class="desc">A bespoke "SS" mark — two italic serifs at different scales, layered, with the warm seam below. Wordmark sits small underneath. Most ownable / trademarkable. Logo-mark + wordmark in one.</div>
+    </div>
+  </div>
+
+  <!-- 10 — Dot-connected lowercase -->
+  <div class="card">
+    <div class="stage"><div class="l10"><span>skin</span><span class="dot"></span><span>sober</span></div></div>
+    <div class="meta">
+      <div class="num">— 10 —</div>
+      <div class="title">Dot-connected</div>
+      <div class="desc">Lowercase grotesk with a clay dot between the two words. Reads as a hyphenated / scientific notation — modern, gender-neutral, ingredient-label tone. Topicals / The Inkey List territory.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Ten directions, one brand. Tell me the number you want — I'll cut the chosen mark to PNG <em>and</em> SVG and wire it into the live header in the next push.
+</footer>
+
+</div>
+</body>
+</html>
